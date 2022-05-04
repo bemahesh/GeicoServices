@@ -1,8 +1,8 @@
 ﻿How to compile:
-Get latest of this repo. Open with Visual Studio 2022
+Get latest of this repo. Open with Visual Studio 2022,
 Go to Build from the top menu or hit CTRL + SHIFT + B
 
-To run the Azure deployed api, go to following endpoint from your browser (chrome)
+To run the Azure deployed api, go to following endpoint from your browser (chrome).
 
 https://tasksmgmtapi.azurewebsites.net/task
 
