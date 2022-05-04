@@ -8,6 +8,10 @@ namespace Geico.Services
         private static IList<T.Task> _tasks;
         private readonly ILogger<TasksService> _logger;
 
+        public IList<T.Task> Tasks
+        {
+            get { return _tasks; }
+        }
         public TasksService(ILogger<TasksService> logger)
         {
             _logger = logger;
@@ -140,21 +144,7 @@ namespace Geico.Services
                     _tasks.Add(taskLast);
                 }
             }
-
-            //lock (_lock)
-            //{
-            //    if (_tasks == null)
-            //    {
-            //        _tasks = new List<T.Task>();
-
-            //        for (int i = 0; i < 10; i++)
-            //        {
-            //            int taskId = i + 1;
-            //            var task = new T.Task(taskId, "task" + taskId.ToString(), "Description" + taskId.ToString(), new DateTime(), new DateTime(), new DateTime(), T.Priority.Medium, T.Status.New);
-            //            _tasks.Add(task);
-            //        }
-            //    }
-            //}
+            
             return _tasks;
         }
     }

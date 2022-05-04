@@ -7,5 +7,6 @@ namespace Geico.Services
         public T.Task CreateTask(T.Task task);
         public T.Task UpdateTask(T.Task task);
         public IList<T.Task> GetTasks();
+        public IList<T.Task> Tasks { get; }
     }
 }
