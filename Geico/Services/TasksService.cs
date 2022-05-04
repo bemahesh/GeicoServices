@@ -7,15 +7,19 @@ namespace Geico.Services
         private static readonly object _lock = new object();
         private static IList<T.Task> _tasks;
         private readonly ILogger<TasksService> _logger;
-
+        private readonly IConfiguration _configuration;
+        private int highThreshold = 0;
         public IList<T.Task> Tasks
         {
             get { return _tasks; }
         }
-        public TasksService(ILogger<TasksService> logger)
+        public TasksService(ILogger<TasksService> logger, IConfiguration config)
         {
             _logger = logger;
             _tasks = GetTempTasks();
+            _configuration = config;
+
+            highThreshold = Convert.ToInt32(_configuration["HighThreshold"]);
         }
 
         public Models.Task CreateTask(Models.Task newTask)
@@ -45,8 +49,7 @@ namespace Geico.Services
                 //Possible discussion point
 
                 int totalCount = GetHighPriorityNotFinishedTotal(updateTask);
-                //TODO: Create config item for 100
-                if (totalCount >= 100)
+                if (totalCount >= highThreshold)
                 {
                     throw new Exception("Too many high priority tasks for the same due date!");
                 }
@@ -91,7 +94,7 @@ namespace Geico.Services
             //pick up all the tasks which are high priority, not finished which are of same due date excluding current task
             //For the due date: considering month, date and year only and ignoring time
             int totalCount = GetHighPriorityNotFinishedTotal(task);
-            if (totalCount >= 100)
+            if (totalCount >= highThreshold)
             {
                 throw new Exception("Too many high priority tasks for the same due date!");
             }
