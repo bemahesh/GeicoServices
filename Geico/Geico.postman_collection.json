@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "5760f604-6098-46d2-8b3d-bef4bd37c96e",
+		"name": "Geico",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://tasksmgmtapi.azurewebsites.net/task",
+					"protocol": "https",
+					"host": [
+						"tasksmgmtapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 13,\r\n        \"name\": \"task13\",\r\n        \"description\": \"Description13\",\r\n        \"dueDate\": \"0001-01-01T00:00:00\",\r\n        \"startDate\": \"0001-01-01T00:00:00\",\r\n        \"endDate\": \"0001-01-01T00:00:00\",\r\n        \"priority\": \"High\",\r\n        \"status\": \"New\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tasksmgmtapi.azurewebsites.net/task",
+					"protocol": "https",
+					"host": [
+						"tasksmgmtapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task - Past Due date",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 0,\r\n        \"name\": \"task13\",\r\n        \"description\": \"Description13\",\r\n        \"dueDate\": \"0001-01-01T00:00:00\",\r\n        \"startDate\": \"0001-01-01T00:00:00\",\r\n        \"endDate\": \"0001-01-01T00:00:00\",\r\n        \"priority\": \"Medium\",\r\n        \"status\": \"New\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tasksmgmtapi.azurewebsites.net/task",
+					"protocol": "https",
+					"host": [
+						"tasksmgmtapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task - More than 100 High Priority",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 0,\r\n        \"name\": \"task101\",\r\n        \"description\": \"Description101\",\r\n        \"dueDate\": \"0001-01-01T00:00:00\",\r\n        \"startDate\": \"0001-01-01T00:00:00\",\r\n        \"endDate\": \"0001-01-01T00:00:00\",\r\n        \"priority\": \"High\",\r\n        \"status\": \"New\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tasksmgmtapi.azurewebsites.net/task",
+					"protocol": "https",
+					"host": [
+						"tasksmgmtapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 0,\r\n        \"name\": \"task13\",\r\n        \"description\": \"Description13\",\r\n        \"dueDate\": \"2022-05-05T00:00:00\",\r\n        \"startDate\": \"0001-01-01T00:00:00\",\r\n        \"endDate\": \"0001-01-01T00:00:00\",\r\n        \"priority\": \"Medium\",\r\n        \"status\": \"New\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tasksmgmtapi.azurewebsites.net/task",
+					"protocol": "https",
+					"host": [
+						"tasksmgmtapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

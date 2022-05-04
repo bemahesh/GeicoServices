@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs
+/Geico/bin/Debug/net6.0
+/Geico/.vs
+/Geico/obj
+/GeicoUnitTests/bin/Debug/net6.0
+/GeicoUnitTests/obj
