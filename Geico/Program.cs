@@ -1,12 +1,9 @@
-//using Newtonsoft.Json.Converters;
 using Geico.Services;
-
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers()
 .AddJsonOptions(options =>
 {
@@ -14,13 +11,13 @@ builder.Services.AddControllers()
 });
 
 //builder.Services.AddScoped<ITasksService, TasksService>();
+//TODO: Since data store is in-memory, chose singleton instance here.
+//if sql server, AddScoped should instead be used.
 builder.Services.AddSingleton<ITasksService, TasksService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//builder.Services.AddMvc().AddJsonOptions(options =>
-//    options..Converters.Add(new StringEnumConverter()));
 
 var app = builder.Build();
 

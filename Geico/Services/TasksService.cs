@@ -45,6 +45,7 @@ namespace Geico.Services
                 //Possible discussion point
 
                 int totalCount = GetHighPriorityNotFinishedTotal(updateTask);
+                //TODO: Create config item for 100
                 if (totalCount >= 100)
                 {
                     throw new Exception("Too many high priority tasks for the same due date!");
@@ -75,6 +76,7 @@ namespace Geico.Services
         {
             try
             {
+                //TODO: THERE SHOULD BE PAGING WITH DEFAULT PAGE SIZE
                 return _tasks;
             }
             catch (Exception ex)

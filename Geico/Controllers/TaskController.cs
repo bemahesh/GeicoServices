@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using T = Geico.Models;
-//using System.Net;
-//using System.Net.Http;
 using Geico.Services;
-//using System.Web.Http;
 
 namespace Geico.Controllers
 {
