@@ -127,15 +127,16 @@ namespace Geico.Services
                 {
                     _tasks = new List<T.Task>();
 
+                    DateTime dueDate = DateTime.Now.AddDays(-1);
                     for (int i = 0; i < 99; i++)
                     {
                         int taskId = i + 1;
-                        var task = new T.Task(taskId, "task" + taskId.ToString(), "Description" + taskId.ToString(), new DateTime(), new DateTime(), new DateTime(), T.Priority.High, T.Status.New);
+                        var task = new T.Task(taskId, "task" + taskId.ToString(), "Description" + taskId.ToString(), dueDate, new DateTime(), new DateTime(), T.Priority.High, T.Status.New);
                         _tasks.Add(task);
                     }
 
                     //add one more which is not high priority for negative testing
-                    var taskLast = new T.Task(101, "task101", "Description101", new DateTime(), new DateTime(), new DateTime(), T.Priority.Low, T.Status.New);
+                    var taskLast = new T.Task(101, "task101", "Description101", dueDate, new DateTime(), new DateTime(), T.Priority.Low, T.Status.New);
                     _tasks.Add(taskLast);
                 }
             }

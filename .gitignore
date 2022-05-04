@@ -8,3 +8,6 @@
 /Geico/obj
 /GeicoUnitTests/bin/Debug/net6.0
 /GeicoUnitTests/obj
+/Geico/bin/Release/net6.0
+/Geico/Properties/PublishProfiles
+/GeicoUnitTests/bin/Release/net6.0/CoverletSourceRootsMapping
