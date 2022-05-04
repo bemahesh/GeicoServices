@@ -136,7 +136,7 @@ namespace Geico.Services
                 {
                     _tasks = new List<T.Task>();
 
-                    DateTime dueDate = DateTime.Now.AddDays(-1);
+                    DateTime dueDate = DateTime.Now.AddMinutes(-1);
                     for (int i = 0; i < 99; i++)
                     {
                         int taskId = i + 1;
