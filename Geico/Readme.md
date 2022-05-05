@@ -10,8 +10,9 @@ This will list out all the existing tasks for inspection. After inserting and up
 
 There is a postman collection, Geico.postman_collection.json, included as part of this repo. Import that file in Postman and you should be able to hit GET, PUT, or POST endpoints. 
 
+Please look at the FreedomStore/FreedomStore.md to setup the db.  Set that up before running the API.
+
 To run the api on local box, there are two ways one can run the api.
 	1) Set Geico project as startup project and hit the run button. Swagger UI should show up in your browser. Hit GET, PUT, or POST endpoints to test.
-	2) Set the GeicoUnitTests as startup project and run the unit tests.
 
-The API uses in memory collection so no db setup is necessary.
+	2) Set the GeicoUnitTests as startup project and run the unit tests.

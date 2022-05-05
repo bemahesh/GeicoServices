@@ -64,11 +64,15 @@ namespace Geico.Controllers
             {
                 _logger.LogError(ex.ToString(), task);
                 string customMessage = string.Empty;
-                //TODO: Does due date not in the past need to apply here?
+                if (ex.Message.Contains("Due date can't be in the past"))
+                {
+                    customMessage = ex.Message;
+                    return StatusCode(400, customMessage);
+                }
                 if (ex.Message.Contains("Too many high priority tasks for the same due date!"))
                 {
                     customMessage = ex.Message;
-                    return StatusCode(500, customMessage);
+                    return StatusCode(400, customMessage);
                 }
                 return StatusCode(500, "Internal Server Error");
             }
